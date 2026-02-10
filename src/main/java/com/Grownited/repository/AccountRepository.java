@@ -3,9 +3,8 @@ package com.Grownited.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.Grownited.entity.UserDetailEntity;
-
+import com.Grownited.entity.AccountEntity;
 @Repository
-public interface UserDetailRepositoy extends JpaRepository<UserDetailEntity, Integer>{
+public interface AccountRepository extends JpaRepository<AccountEntity, Integer> {
 
 }
