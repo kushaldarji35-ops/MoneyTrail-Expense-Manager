@@ -1,0 +1,32 @@
+package com.Grownited.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.Grownited.entity.VendorEntity;
+import com.Grownited.repository.VendorRepository;
+
+@Controller
+public class VendorController {
+	
+	@Autowired
+    VendorRepository vendorRepository;
+
+    // Open Status Page
+    @GetMapping("newVendor")
+    public String newVendor() {
+        return "NewVendor";   // Status.jsp
+    }
+
+    // Save Status (VERY IMPORTANT → add path)
+    @PostMapping("savevendor")
+    public String saveStatus(VendorEntity vendorEntity) {
+
+        vendorRepository.save(vendorEntity);
+
+        // redirect prevents duplicate form submission
+        return "redirect:/newVendor";
+    }
+}

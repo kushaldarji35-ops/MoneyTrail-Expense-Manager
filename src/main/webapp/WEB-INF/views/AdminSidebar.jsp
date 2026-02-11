@@ -11,7 +11,8 @@
     <a href="newIncome"><i class="bi bi-wallet2"></i> New Income</a>
     <a href="listIncome"><i class="bi bi-diagram-3"></i> List Income</a>
     <a href="account"><i class="bi bi-bank"></i> Add Account</a>
-    <a href="status"><i class="bi bi-check-circle"></i> Status</a>
+    <a href="newVendor"><i class="bi bi-building"></i> Vendor</a>
+    <a href="newStatus"><i class="bi bi-check-circle"></i> Status</a>
     <a href="#"><i class="bi bi-cash-stack"></i> View Expenses</a>
     <a href="#"><i class="bi bi-graph-up"></i> Reports</a>
 

@@ -1,5 +1,6 @@
 package com.Grownited.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,11 +24,17 @@ public class UserController {
 	public String newUser() {
 		return "Users";
 	}
+	
 	@PostMapping
 	public String saveUser(UserEntity userEntity) {
+		 
+		userEntity.setCreatedAt(LocalDate.now()); // ⭐ IMPORTANT
+	        userEntity.setActive(true);
+		
 		userRepository.save(userEntity);
 		return "AdminDashboard";
 	}
+	
 	@GetMapping("ListUsers")
 	public String users(Model model){
 

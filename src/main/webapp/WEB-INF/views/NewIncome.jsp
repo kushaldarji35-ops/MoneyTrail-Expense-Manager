@@ -125,12 +125,12 @@ body {
 
                     </div>
 
-                    <jsp:include page="AdminFooter.jsp"></jsp:include>
-
                 </div>
 
             </div>
+              <jsp:include page="AdminFooter.jsp"></jsp:include>
         </div>
+      
     </div>
 
 </body>

@@ -15,9 +15,9 @@ public class StatusController {
     StatusRepository statusRepository;
 
     // Open Status Page
-    @GetMapping("status")
+    @GetMapping("newStatus")
     public String newStatus() {
-        return "Status";   // Status.jsp
+        return "NewStatus";   // Status.jsp
     }
 
     // Save Status (VERY IMPORTANT → add path)
