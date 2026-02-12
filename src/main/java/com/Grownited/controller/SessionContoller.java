@@ -1,6 +1,8 @@
 package com.Grownited.controller;
 
 import java.nio.file.attribute.UserDefinedFileAttributeView;
+import java.time.LocalDate;
+
 import com.Grownited.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +48,7 @@ public class SessionContoller {
 			System.out.println("Processor => " + Runtime.getRuntime().availableProcessors());
 
 
-			
+			userEntity.setCreatedAt(LocalDate.now());
 			userEntity.setRole("PARTICIPANT");
 			userEntity.setActive(true);
 

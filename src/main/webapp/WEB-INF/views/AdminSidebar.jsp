@@ -13,7 +13,8 @@
     <a href="account"><i class="bi bi-bank"></i> Add Account</a>
     <a href="newVendor"><i class="bi bi-building"></i> Vendor</a>
     <a href="newStatus"><i class="bi bi-check-circle"></i> Status</a>
-    <a href="#"><i class="bi bi-cash-stack"></i> View Expenses</a>
+    <a href="expense"><i class="bi bi-cash-stack"></i> Add Expenses</a>
+    <a href="listexpense"><i class="bi bi-receipt"></i> View Expenses</a>
     <a href="#"><i class="bi bi-graph-up"></i> Reports</a>
 
 </div>
