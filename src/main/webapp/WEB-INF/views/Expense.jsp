@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +51,7 @@
                         <!-- Category -->
                         <div class="mb-3">
                             <label class="form-label">Category</label>
+                            
                             <select name="categoryId" class="form-control" required>
                                 <option value="-1">Select Category</option>
                                 <c:forEach items="${categoryList}" var="c">

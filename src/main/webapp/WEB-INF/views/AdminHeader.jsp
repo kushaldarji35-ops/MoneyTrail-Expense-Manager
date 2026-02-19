@@ -1,5 +1,5 @@
 <!-- Header -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container-fluid">
 
         <!-- Logo / Title -->
@@ -11,10 +11,10 @@
         <div class="ms-auto">
 
             <span class="me-3 fw-semibold">
-                Welcome, Admin
+                Welcome ${sessionScope.user.firstName}
             </span>
 
-            <a href="login" class="btn btn-sm btn-danger ms-3">
+            <a href="logout" class="btn btn-sm btn-danger ms-3">
                <i class="bi bi-box-arrow-right"></i> Logout
             </a>
         </div>

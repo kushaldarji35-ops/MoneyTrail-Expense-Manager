@@ -35,11 +35,11 @@
     			<h4><p class="text-center text-muted mb-4">Add New Account</p></h4>
 
 
-    <form action="account" method="post">
+    <form action="addaccount" method="post">
 
         <!-- Account Name -->
         <div class="form-lable">
-            <label class="form-label">Account Name</label>
+            <label class="form-label">Account Type</label>
             <input type="text"
                    name="title"
                    class="form-control"

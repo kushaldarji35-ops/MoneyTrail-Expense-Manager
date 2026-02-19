@@ -12,6 +12,7 @@ public class SubCategoryEntity {
     private Integer categoryId;
     private String subCategoryName;
     private Boolean active = true;
+   
 
     // ===== GETTERS & SETTERS =====
 
@@ -45,4 +46,6 @@ public class SubCategoryEntity {
     public void setActive(Boolean active) {
         this.active = active;
     }
+
+	
 }

@@ -55,6 +55,7 @@
             <thead class="table-dark">
                 <tr>
                     <th width="70">#</th>
+                     <th>Category Name</th>
                     <th>SubCategory Name</th>
                     <th width="150">Status</th>
                     <th width="180">Action</th>
@@ -78,6 +79,14 @@
                     <tr>
                         <td>${i.index + 1}</td>
 
+                         <td>
+                             <c:forEach items="${categoryList}" var="cat">
+                <c:if test="${cat.categoryId == sub.categoryId}">
+                    ${cat.categoryName}
+                </c:if>
+            </c:forEach>
+                        </td>
+                           
                         <td>
                             <strong>${sub.subCategoryName}</strong>
                         </td>

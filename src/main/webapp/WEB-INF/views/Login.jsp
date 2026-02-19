@@ -42,11 +42,11 @@
     <h3 class="text-center brand-title mb-1">MoneyTrail</h3>
     <p class="text-center text-muted mb-4">Login</p>
 
-    <form action="LoginUser" method="post">
+    <form action="authenticate" method="post">
 
         <div class="mb-3">
             <label class="form-label">Email or Phone Number</label>
-            <input type="text" name="identifier" class="form-control" placeholder="Enter email or phone number" required>
+            <input type="text" name="email" class="form-control" placeholder="Enter email or phone number" required>
         </div>
      
         <div class="mb-3">
@@ -63,7 +63,7 @@
 
 
         <div class="d-grid mt-4">
-            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+           <button type="submit" class="btn btn-primary btn-lg">Login</button>
         </div>
 
         <p class="text-center mt-3">

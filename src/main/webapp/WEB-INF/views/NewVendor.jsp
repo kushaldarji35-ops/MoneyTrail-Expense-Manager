@@ -80,9 +80,9 @@ body {
 
 				</div>
 			</div>
-			<jsp:include page="AdminFooter.jsp"></jsp:include>
 
 		</div>
+					<jsp:include page="AdminFooter.jsp"></jsp:include>
 	</div>
 </div>
 
