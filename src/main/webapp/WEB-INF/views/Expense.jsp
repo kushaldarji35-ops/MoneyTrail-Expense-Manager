@@ -9,16 +9,19 @@
 <jsp:include page="AdminCSS.jsp"></jsp:include>
 
 <style>
+ body{
+        background-color:#f4f6f9;
+    }
 
-.card{
-    margin-top:60px;
-    border-radius:15px;
+    .card{
+        border:none;
+        border-radius:12px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-.form-label{
-    font-weight:600;
+.btn-add{
+    float:right;
 }
-
 </style>
 
 </head>
@@ -53,7 +56,7 @@
                             <label class="form-label">Category</label>
                             
                             <select name="categoryId" class="form-control" required>
-                                <option value="-1">Select Category</option>
+                                <option value="1">Select Category</option>
                                 <c:forEach items="${categoryList}" var="c">
                                     <option value="${c.categoryId}">${c.categoryName}</option>
                                 </c:forEach>
@@ -64,7 +67,7 @@
                         <div class="mb-3">
                             <label class="form-label">Sub Category</label>
                             <select name="subCategoryId" class="form-control" required>
-                                <option value="-1">Select SubCategory</option>
+                                <option value="1">Select SubCategory</option>
                                 <c:forEach items="${subCategoryList}" var="sc">
                                     <option value="${sc.subCategoryId}">${sc.subCategoryName}</option>
                                 </c:forEach>
@@ -75,7 +78,7 @@
                         <div class="mb-3">
                             <label class="form-label">Vendor</label>
                             <select name="vendorId" class="form-control">
-                                <option value="-1">Select Vendor</option>
+                                <option value="1">Select Vendor</option>
                                 <c:forEach items="${vendorList}" var="v">
                                     <option value="${v.vendorId}">${v.vendorName}</option>
                                 </c:forEach>
@@ -86,7 +89,7 @@
                         <div class="mb-3">
                             <label class="form-label">Account</label>
                             <select name="accountId" class="form-control" required>
-                                <option value="-1">Select Account</option>
+                                <option value="1">Select Account</option>
                                 <c:forEach items="${accountList}" var="a">
                                     <option value="${a.accountId}">${a.accountName}</option>
                                 </c:forEach>
@@ -97,7 +100,7 @@
                         <div class="mb-3">
                             <label class="form-label">Status</label>
                             <select name="statusId" class="form-control" required>
-                                <option value="-1">Select Status</option>
+                                <option value="1">Select Status</option>
                                 <c:forEach items="${statusList}" var="s">
                                     <option value="${s.statusId}">${s.statusName}</option>
                                 </c:forEach>

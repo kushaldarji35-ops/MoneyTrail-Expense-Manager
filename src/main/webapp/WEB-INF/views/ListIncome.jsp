@@ -43,7 +43,7 @@
                 <i class="bi bi-cash-stack text-success"></i>
                 Income List
 
-                <a href="newincome" class="btn btn-success btn-add">
+                <a href="newIncome" class="btn btn-success btn-add">
                     <i class="bi bi-plus-circle"></i> Add Income
                 </a>
             </h3>
@@ -85,21 +85,25 @@
                             </td>
 
                             <td>
-                            	<a href="viewincome?incomeId=${income.incomeId}"
-								   class="btn btn-sm btn-info">
-								   <i class="bi bi-eye-fill"></i>
-								</a>
-                           
-                                <a href="editincome?incomeId=${income.incomeId}"
-                                   class="btn btn-sm btn-warning">
-                                   <i class="bi bi-pencil-square"></i>
-                                </a>
+                            	
+                                	 <!-- View -->
+                                    <a href="viewincome?incomeId=${income.incomeId}" 
+                                       class="btn btn-sm btn-info">
+                                       <i class="bi bi-eye-fill"></i>
+                                    </a>
 
-                                <a href="deleteincome?incomeId=${income.incomeId}"
-                                   class="btn btn-sm btn-danger"
-                                   onclick="return confirm('Are you sure you want to delete this income?')">
-                                   <i class="bi bi-trash"></i>
-                                </a>
+                                    <!-- Edit -->
+                                    <a href="editincome?incomeId=${income.incomeId}" 
+                                       class="btn btn-sm btn-warning">
+                                       <i class="bi bi-pencil-square"></i>
+                                    </a>
+
+                                    <!-- Delete -->
+                                    <a href="deleteincome?incomeId=${income.incomeId}" 
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete this expense?')">
+                                       <i class="bi bi-trash"></i>
+                                    </a>
 
                             </td>
                         </tr>

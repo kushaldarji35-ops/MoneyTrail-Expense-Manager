@@ -27,61 +27,60 @@
 	<jsp:include page="AdminSidebar.jsp"></jsp:include>
 
 <div class="content">
-		<div class="row justify-content-center">
-			<div class="col-md-6 col-lg-5">
-				<div class="card shadow">
-					<div class="card-body p-4">
-						<h3 class="text-center brand mb-4">MoneyTrail</h3>
-    			<h4><p class="text-center text-muted mb-4">Add New Account</p></h4>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow">
+                <div class="card-body p-4">
 
+                    <h3 class="text-center brand mb-4">MoneyTrail</h3>
+                    <h4>
+                        <p class="text-center text-muted mb-4">Add New Account</p>
+                    </h4>
 
-    <form action="addaccount" method="post">
+                    <form action="addaccount" method="post">
 
-        <!-- Account Name -->
-        <div class="form-lable">
-            <label class="form-label">Account Type</label>
-            <input type="text"
-                   name="title"
-                   class="form-control"
-                   placeholder="Enter account (Cash, Bank, UPI...)"
-                   required>
+                        <!-- Account Type -->
+                        <div class="form-label">
+                            <label class="form-label">Account Type</label>
+                            <select name="title" class="form-control" required>
+                                <option value="">Select Account Type</option>
+                                <option value="Cash">Cash</option>
+                                <option value="Debit Card">Debit Card</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="UPI">UPI</option>
+                            </select>
+                        </div>
+
+                        <br>
+
+                        <!-- Opening Balance -->
+                        <div class="form-label">
+                            <label class="form-label">Opening Balance</label>
+                            <input type="number"
+                                   name="amount"
+                                   class="form-control"
+                                   placeholder="Enter starting balance"
+                                   step="0.01"
+                                   required>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Save Account
+                            </button>
+                        </div>
+
+                        <p class="text-center mt-3">
+                            <a href="admin-dashboard" class="btn btn-secondary">Cancel</a>
+                        </p>
+
+                    </form>
+
+                </div>
+
+                <jsp:include page="AdminFooter.jsp"></jsp:include>
+            </div>
         </div>
-		<br>	
-        <!-- Opening Balance -->
-        <div class="form-lable">
-            <label class="form-label">Opening Balance</label>
-            <input type="number"
-                   name="amount"
-                   class="form-control"
-                   placeholder="Enter starting balance"
-                   step="0.01"
-                   required>
-        </div>
-
-        <!-- Button -->
-        <div class="text-center mt-3">
-            <button type="submit" class="btn btn-primary btn-lg">
-                Save Account
-            </button>
-        </div>
-
-        <p class="text-center mt-3">
-            <a href="admin-dashboard" class="btn btn-secondary"> Cancel</a>
-        </p>
-
-    </form>
-    
-					</div>
-					<jsp:include page="AdminFooter.jsp"></jsp:include>
-				</div>
-			</div>
-		</div>
-		
-		
-		
-    
+    </div>
 </div>
-			
-
-</body>
-</html>

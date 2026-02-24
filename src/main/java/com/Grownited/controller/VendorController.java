@@ -1,7 +1,10 @@
 package com.Grownited.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,6 +30,18 @@ public class VendorController {
         vendorRepository.save(vendorEntity);
 
         // redirect prevents duplicate form submission
-        return "redirect:/newVendor";
+        return "redirect:/listVendor";
     }
+    @GetMapping("listVendor")
+    public String listVendor(Model model){
+        List<VendorEntity> vendors = vendorRepository.findAll();
+        model.addAttribute("vendors", vendors);
+        return "ListVendor";
+    }
+    @GetMapping("deleteVendor")
+   	public String deleteVendor(Integer vendorId) {
+   		vendorRepository.deleteById(vendorId);
+   		
+   		return "redirect:/listVendor";//do not open jsp , open another url -> listHackathon
+   	}
 }

@@ -38,7 +38,7 @@ public class CategoryContoller {
 		return "ListCategory";
 	}
 	@GetMapping("deleteCategory")
-	public String deleteUser(Integer categoryId) {
+	public String deletecategory(Integer categoryId) {
 		categoryRepository.deleteById(categoryId);
 		
 		return "redirect:/listCategory";//do not open jsp , open another url -> listHackathon

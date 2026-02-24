@@ -9,7 +9,8 @@ body{
 
 /* Sidebar */
 .sidebar{
-    height:100vh;
+    height:94vh;
+    overflow-y:auto; 
     background:#185a9d;
     color:white;
     position:fixed;
@@ -26,7 +27,7 @@ body{
     display:block;
     padding:12px;
     border-radius:8px;
-    margin-bottom:5px;
+    margin-bottom:px;
 }
 
 .sidebar a:hover{

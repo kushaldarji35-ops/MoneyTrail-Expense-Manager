@@ -94,10 +94,6 @@ public class ExpenseEntity {
 	public void setActive(boolean b) {
 		// TODO Auto-generated method stub
 		
-	}	
-
-	
-	
-	
+	}
 
 }

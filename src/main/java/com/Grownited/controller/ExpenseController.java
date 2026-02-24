@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Grownited.entity.CategoryEntity;
 import com.Grownited.entity.ExpenseEntity;
-import com.Grownited.entity.IncomeEntity;
 import com.Grownited.entity.SubCategoryEntity;
 import com.Grownited.entity.VendorEntity;
 import com.Grownited.repository.CategoryRepository;
@@ -59,7 +58,7 @@ public class ExpenseController {
         expenseRepository.save(expenseEntity);
 
         // PRG Pattern (VERY IMPORTANT)
-        return "redirect:/admin-dashboard";
+        return "redirect:/listexpense";
     }
     
     @GetMapping("listexpense")
@@ -68,5 +67,11 @@ public class ExpenseController {
         model.addAttribute("expenseList",expenseList);
         return "ListExpense";
     }
-
+    @GetMapping("deleteexpense")
+	public String deleteUser(Integer expenseId) {
+		expenseRepository.deleteById(expenseId);
+		
+		return "redirect:/listexpense";//do not open jsp , open another url -> listHackathon
+	}
+    
 }

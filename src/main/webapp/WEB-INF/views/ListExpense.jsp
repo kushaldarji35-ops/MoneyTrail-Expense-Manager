@@ -15,11 +15,11 @@
 
 .card{
     margin-top:60px;
-    border-radius:15px;
+    border-radius:12px;
 }
 
 .table th{
-    background-color:#dc3545;
+    background-color:rgb(0, 0, 0);
     color:white;
 }
 
@@ -37,21 +37,18 @@
 
 <div class="content">
 
-    <div class="container-fluid">
+    <div class="card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="mb-0">Expense List</h3>
 
-        <div class="card shadow-lg">
-
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h4 class="mb-0">Expense List</h4>
-
-                <a href="expense" class="btn btn-danger">
+                <a href="expense" class="btn btn-success">
                     <i class="bi bi-cash-stack"></i> New Expense
                 </a>
             </div>
 
             <div class="card-body">
 
-                <table class="table table-bordered table-hover text-center">
+                <table class="table table-bordered table-hover text-center align-middle">
 
                     <thead>
                         <tr>
@@ -84,6 +81,12 @@
                                 <td>${e.date}</td>
 
                                 <td>
+                    
+                                	 <!-- View -->
+                                    <a href="viewexpense?expenseId=${e.expenseId}" 
+                                       class="btn btn-sm btn-info">
+                                       <i class="bi bi-eye-fill"></i>
+                                    </a>
 
                                     <!-- Edit -->
                                     <a href="editexpense?expenseId=${e.expenseId}" 
@@ -110,12 +113,11 @@
 
             </div>
         </div>
+       
+        <jsp:include page="AdminFooter.jsp"></jsp:include>
 
     </div>
 
-<jsp:include page="AdminFooter.jsp"></jsp:include>
-
-</div>
 
 </body>
 </html>

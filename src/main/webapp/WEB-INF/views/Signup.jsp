@@ -43,7 +43,7 @@
     <h3 class="text-center brand-title mb-1">MoneyTrail</h3>
     <p class="text-center text-muted mb-4">Create Account</p>
 
-    <form action="register" method="post">
+    <form action="register" method="post" enctype="multipart/form-data">
 
         <div class="row">
             <div class="col-md-6 mb-3">
@@ -112,7 +112,7 @@
         <!-- Profile Pic URL -->
 			<div class="mb-3">
 					<label class="form-label">Profile Picture URL</label> <input
-						type="file" name="profilePicURL" class="form-control">
+						type="file" name="profilePic" class="form-control">
 			</div>
 			
         <div class="d-grid mt-4">

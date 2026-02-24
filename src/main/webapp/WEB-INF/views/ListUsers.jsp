@@ -112,18 +112,24 @@
                         <td>${u.createdAt}</td>
 
                         <td>
-                        	<a class="btn btn-secondary btn-sm" href="viewUser?userId=${u.userId}">View</a>
-                            
-                            <a href="editUser?userId=${u.userId}"
-                               class="btn btn-warning btn-sm">
-                                Edit
-                            </a>
+                                	 <!-- View -->
+                                    <a href="viewUser?userId=${u.userId}" 
+                                       class="btn btn-sm btn-info">
+                                       <i class="bi bi-eye-fill"></i>
+                                    </a>
 
-                            <a href="deleteUser?userId=${u.userId}"
-                               class="btn btn-danger btn-sm"
-                               onclick="return confirm('Are you sure you want to delete this user?')">
-                                Delete
-                            </a>
+                                    <!-- Edit -->
+                                    <a href="editUser?userId=${u.userId}" 
+                                       class="btn btn-sm btn-warning">
+                                       <i class="bi bi-pencil-square"></i>
+                                    </a>
+
+                                    <!-- Delete -->
+                                    <a href="deleteUser?userId=${u.userId}" 
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete this expense?')">
+                                       <i class="bi bi-trash"></i>
+                                    </a>
                         </td>
                     </tr>
                 </c:forEach>

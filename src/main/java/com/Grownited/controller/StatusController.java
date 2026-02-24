@@ -2,6 +2,7 @@ package com.Grownited.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,6 +28,16 @@ public class StatusController {
         statusRepository.save(statusEntity);
 
         // redirect prevents duplicate form submission
-        return "redirect:/status";
+        return "redirect:/listStatus";
+    }
+    @GetMapping("listStatus")
+    public String listStatus(Model model){
+    	model.addAttribute("statusList", statusRepository.findAll());
+    	return "ListStatus";
+    }
+    @GetMapping("deletestatus")
+    public String deleteStatus(Integer statusId){
+        statusRepository.deleteById(statusId);
+        return "redirect:/listStatus";
     }
 }

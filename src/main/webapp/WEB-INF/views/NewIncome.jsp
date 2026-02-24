@@ -11,15 +11,21 @@
 <jsp:include page="AdminCSS.jsp"></jsp:include>
 
 <style>
-body {
-	background-color: linear-gradient(135deg, #43cea2, #185a9d);
+ body{
+        background-color:#f4f6f9;
+    }
+
+    .card{
+        border:none;
+        border-radius:12px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
-.card {
-	margin-top: 80px;
-	border-radius: 14px;
+.btn-add{
+    float:right;
 }
 </style>
+
 </head>
 
 <body>
@@ -124,11 +130,11 @@ body {
                         </form>
 
                     </div>
+                    <jsp:include page="AdminFooter.jsp"></jsp:include>
 
                 </div>
 
             </div>
-              <jsp:include page="AdminFooter.jsp"></jsp:include>
         </div>
       
     </div>

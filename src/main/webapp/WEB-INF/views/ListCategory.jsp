@@ -30,7 +30,7 @@
 
 </head>
 <body>
-<!-- header -->
+	<!-- header -->
 	<jsp:include page="AdminHeader.jsp"></jsp:include>
 
 	<!-- Sidebar -->
@@ -100,21 +100,25 @@
                         </td>
 
                         <td>
-                        <a href="viewCategory?categoryId=${cat.categoryId}"
-                               class="btn btn-secondary btn-sm">
-                               View
-                            </a>
+                       
+                                	 <!-- View -->
+                                    <a href="viewCategory?categoryId=${cat.categoryId}" 
+                                       class="btn btn-sm btn-info">
+                                       <i class="bi bi-eye-fill"></i>
+                                    </a>
 
-                            <a href="editCategory?categoryId=${cat.categoryId}"
-                               class="btn btn-warning btn-sm">
-                               Edit
-                            </a>
+                                    <!-- Edit -->
+                                    <a href="editCategory?categoryId=${cat.categoryId}" 
+                                       class="btn btn-sm btn-warning">
+                                       <i class="bi bi-pencil-square"></i>
+                                    </a>
 
-                            <a href="deleteCategory?categoryId=${cat.categoryId}"
-                               class="btn btn-danger btn-sm"
-                               onclick="return confirm('Delete this category?')">
-                               Delete
-                            </a>
+                                    <!-- Delete -->
+                                    <a href="deleteCategory?categoryId=${cat.categoryId}" 
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete this expense?')">
+                                       <i class="bi bi-trash"></i>
+                                    </a>
 
                         </td>
                     </tr>

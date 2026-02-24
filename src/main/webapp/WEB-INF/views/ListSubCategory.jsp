@@ -111,16 +111,25 @@
 
                         <td>
 
-                            <a href="editSubCategory?subcategoryId=${sub.subCategoryId}"
-                               class="btn btn-warning btn-sm">
-                               Edit
-                            </a>
+                            
+                                	 <!-- View -->
+                                    <a href="viewSubCategory?subcategoryId=${sub.subCategoryId}" 
+                                       class="btn btn-sm btn-info">
+                                       <i class="bi bi-eye-fill"></i>
+                                    </a>
 
-                            <a href="deleteSubCategory?subcategoryId=${sub.subCategoryId}"
-                               class="btn btn-danger btn-sm"
-                               onclick="return confirm('Delete this subcategory?')">
-                               Delete
-                            </a>
+                                    <!-- Edit -->
+                                    <a href="editSubCategory?subcategoryId=${sub.subCategoryId}" 
+                                       class="btn btn-sm btn-warning">
+                                       <i class="bi bi-pencil-square"></i>
+                                    </a>
+
+                                    <!-- Delete -->
+                                    <a href="deleteSubCategory?subcategoryId=${sub.subCategoryId}" 
+                                       class="btn btn-sm btn-danger"
+                                       onclick="return confirm('Are you sure you want to delete this expense?')">
+                                       <i class="bi bi-trash"></i>
+                                    </a>
 
                         </td>
                     </tr>

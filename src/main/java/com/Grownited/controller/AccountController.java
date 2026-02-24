@@ -1,7 +1,10 @@
 package com.Grownited.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -26,14 +29,34 @@ public class AccountController {
 
     // ✅ Save Account Data
     @PostMapping("/addaccount")
-    public String saveAccount(AccountEntity accountEntity,UserEntity userEntity,HttpSession session) {
-    
-    	UserEntity currentLogInUser = (UserEntity) session.getAttribute("user");
-		accountEntity.setUserId(currentLogInUser.getUserId());
-    	
+    public String saveAccount(AccountEntity accountEntity, HttpSession session) {
+
+        UserEntity currentLogInUser = (UserEntity) session.getAttribute("user");
+
+        // ✅ STEP 1 — verify session user
+        if(currentLogInUser == null){
+            System.out.println("SESSION USER NULL → LOGIN REQUIRED");
+            return "redirect:/login";
+        }
+
+        // ✅ STEP 2 — set FK
+        accountEntity.setUserId(currentLogInUser.getUserId());
+
+        // ✅ STEP 3 — save
         accountRepository.save(accountEntity);
 
-        // redirect prevents duplicate form submission
-        return "AdminDashboard";
+        return "redirect:/ListAccount";
     }
+    @GetMapping("ListAccount")
+    public String listAccount(Model model){
+        List<AccountEntity> accounts = accountRepository.findAll();
+        model.addAttribute("accounts", accounts);
+        return "ListAccount";
+    }
+    @GetMapping("deleteaccount")
+	public String deleteaccount(Integer accountId) {
+		accountRepository.deleteById(accountId);
+		
+		return "redirect:/ListAccount";//do not open jsp , open another url -> listHackathon
+	}
 }

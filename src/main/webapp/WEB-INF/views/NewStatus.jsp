@@ -24,7 +24,7 @@ body {
 <jsp:include page="AdminHeader.jsp"></jsp:include>
 <jsp:include page="AdminSidebar.jsp"></jsp:include>
 
-<div class="container">
+<div class="content">
     <div class="row justify-content-center">
         <div class="col-md-5">
             <div class="card shadow">

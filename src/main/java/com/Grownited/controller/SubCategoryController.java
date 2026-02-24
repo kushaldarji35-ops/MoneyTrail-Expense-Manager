@@ -54,7 +54,7 @@ public class SubCategoryController {
         return "ListSubCategory";
     }
     @GetMapping("deleteSubCategory")
-	public String deleteUser(Integer subcategoryId) {
+	public String deleteSubCategory(Integer subcategoryId) {
 		subCategoryRepository.deleteById(subcategoryId);
 		
 		return "redirect:/listSubCategory";//do not open jsp , open another url -> listHackathon

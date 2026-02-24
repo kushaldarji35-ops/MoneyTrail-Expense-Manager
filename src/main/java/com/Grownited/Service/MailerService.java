@@ -47,5 +47,26 @@ public class MailerService {
 		}
 
 	}
+	public void sendOtpMail(UserEntity user) {
+		 MimeMessage message = javaMailSender.createMimeMessage();
+		 Resource resource = resourceLoader.getResource("classpath:templates/OtpMailTemplate.html");
+
+	    try {
+	    	String html = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+
+	        String body = html
+	                .replace("${name}", user.getFirstName())
+	                .replace("${otp}", user.getOtp())
+	                .replace("${companyName}", "MoneyTrail");
+	        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+	        
+	        helper.setTo(user.getEmail());
+	        helper.setSubject("MoneyTrail - Password Reset OTP");
+	        helper.setText(body, true);
+	        javaMailSender.send(message);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	}
 
 }
