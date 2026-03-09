@@ -132,9 +132,9 @@ public class SessionContoller {
 				
 				//if(dbuser.getPassword().equals(password)) {
 					if(dbuser.getRole().equals("ADMIN")) {
-						return "redirect:admin-dashboard";
+						return "redirect:/admin-dashboard";
 					} else if (dbuser.getRole().equals("CUSTOMER")) {
-						return "redirect:/admin-dashboard";// url '
+						return "redirect:/customer-dashboard";
 				}
 			}
 				

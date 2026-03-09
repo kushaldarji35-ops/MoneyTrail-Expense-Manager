@@ -4,19 +4,20 @@
 
         <!-- Logo / Title -->
         <span class="navbar-brand fw-bold">
-            Admin Panel
+           Welcome ${sessionScope.user.firstName}
         </span>
 
-        <!-- Right Side -->
-        <div class="ms-auto">
-
-            <span class="me-3 fw-semibold">
-                Welcome ${sessionScope.user.firstName}
-            </span>
+    
+            <div class="header-actions">
+        <div class="user-info">
+            <img src="${sessionScope.user.profilePicURL != null ? sessionScope.user.profilePicURL : 'https://cdn-icons-png.flaticon.com/512/149/149071.png'}" 
+                 alt="Profile">
 
             <a href="logout" class="btn btn-sm btn-danger ms-3">
                <i class="bi bi-box-arrow-right"></i> Logout
             </a>
+        </div>
+        </div>
         </div>
     </div>
 </nav>

@@ -46,6 +46,12 @@ body{
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
     padding:15px;
 }
+.user-info img {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
 
 /* Footer */
 .footer{

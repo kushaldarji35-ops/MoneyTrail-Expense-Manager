@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 import com.Grownited.entity.CategoryEntity;
 @Repository
 public interface CategoryRepository extends JpaRepository<CategoryEntity, Integer>{
-
+		long countByActive(Boolean active);
 }

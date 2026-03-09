@@ -17,7 +17,7 @@
     <a href="newStatus"><i class="bi bi-check-circle"></i> Add Status</a>
     <a href="listStatus"><i class="bi bi-diagram-3"></i> List  Status</a>
     <a href="expense"><i class="bi bi-cash-stack"></i> Add Expenses</a>
-    <a href="listexpense"><i class="bi bi-receipt"></i> View Expenses</a>
+    <a href="listexpense"><i class="bi bi-receipt"></i> List Expenses</a>
     <a href="#"><i class="bi bi-graph-up"></i> Reports</a>
 
 </div>

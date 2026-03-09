@@ -29,7 +29,7 @@
             <div class="col-md-3">
                 <div class="card card-box p-3">
                     <h6>Total Users</h6>
-                    <h3>120</h3>
+                    <h3>${totalUser}</h3>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
             <div class="col-md-3">
                 <div class="card card-box p-3">
                     <h6>Total Categories</h6>
-                    <h3>15</h3>
+                    <h3>${totalCategory}</h3>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
             <div class="col-md-3">
                 <div class="card card-box p-3">
                     <h6>Total Expenses</h6>
-                    <h3>₹45,000</h3>
+                    <h3>₹5000</h3>
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
             <div class="col-md-3">
                 <div class="card card-box p-3">
                     <h6>Monthly Spending</h6>
-                    <h3>₹8,500</h3>
+                    <h3>₹1240</h3>
                 </div>
             </div>
 
