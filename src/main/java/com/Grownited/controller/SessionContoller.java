@@ -127,9 +127,9 @@ public class SessionContoller {
 			if(op.isPresent()) {
 				
 				UserEntity dbuser = op.get();
-				session.setAttribute("user", dbuser);
-				if (passwordEncoder.matches(password, dbuser.getPassword())) {
 				
+				if (passwordEncoder.matches(password, dbuser.getPassword())) {
+					session.setAttribute("user", dbuser);
 				//if(dbuser.getPassword().equals(password)) {
 					if(dbuser.getRole().equals("ADMIN")) {
 						return "redirect:/admin-dashboard";

@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +18,10 @@ public class AccountEntity {
 	private String title;
 	private Boolean exDefault;
 	private Integer amount;
-	private Integer userId;
+	 @ManyToOne
+	    @JoinColumn(name="user_id")
+	    private UserEntity user;
+
 	
 	public Integer getAccountId() {
 		return accountId;
@@ -42,11 +47,12 @@ public class AccountEntity {
 	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
-	public Integer getUserId() {
-		return userId;
+	
+	public UserEntity getUser() {
+		return user;
 	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(UserEntity user) {
+		this.user = user;
 	}
 	public void setActive1(boolean b) {
 		// TODO Auto-generated method stub

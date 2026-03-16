@@ -63,7 +63,7 @@
                     </td>
 
                     <td>${a.amount}</td>
-                    <td>${a.userId}</td>
+                    <td>${a.user.userId}</td>
 
                     <td>
 

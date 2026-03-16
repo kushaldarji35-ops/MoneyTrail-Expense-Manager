@@ -42,12 +42,9 @@
 
 <body>
 
-<!-- header -->
-	<jsp:include page="AdminHeader.jsp"></jsp:include>
+        <jsp:include page="AdminHeader.jsp"></jsp:include>
+        <jsp:include page="AdminSidebar.jsp"></jsp:include>
 
-	<!-- Sidebar -->
-	<jsp:include page="AdminSidebar.jsp"></jsp:include>
-	
 <!-- CONTENT -->
 <div class="content">
 
@@ -56,7 +53,7 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3>Users List</h3>
 
-            <a href="signup" class="btn btn-primary">
+            <a href="adduser" class="btn btn-primary">
                 + Add User
             </a>
         </div>

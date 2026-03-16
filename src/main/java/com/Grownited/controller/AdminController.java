@@ -26,7 +26,7 @@ public class AdminController {
 		model.addAttribute("totalUser",totalUser);
 		model.addAttribute("totalCategory",totalCategory);
 		
-		
+	
 		return "AdminDashboard";
 	}
 public class Account {

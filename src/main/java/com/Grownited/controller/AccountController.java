@@ -40,7 +40,7 @@ public class AccountController {
         }
 
         // ✅ STEP 2 — set FK
-        accountEntity.setUserId(currentLogInUser.getUserId());
+        accountEntity.setUser(currentLogInUser);
 
         // ✅ STEP 3 — save
         accountRepository.save(accountEntity);

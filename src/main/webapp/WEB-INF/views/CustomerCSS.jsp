@@ -9,6 +9,7 @@ body{
 
 /* Sidebar */
 .sidebar{
+	position: fixed;
     height:94vh;
     overflow-y:auto; 
     background:#185a9d;

@@ -91,7 +91,7 @@
                             <select name="accountId" class="form-control" required>
                                 <option value="1">Select Account</option>
                                 <c:forEach items="${accountList}" var="a">
-                                    <option value="${a.accountId}">${a.accountName}</option>
+                                    <option value="${a.accountId}">${a.title}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -102,7 +102,7 @@
                             <select name="statusId" class="form-control" required>
                                 <option value="1">Select Status</option>
                                 <c:forEach items="${statusList}" var="s">
-                                    <option value="${s.statusId}">${s.statusName}</option>
+                                    <option value="${s.statusId}">${s.status}</option>
                                 </c:forEach>
                             </select>
                         </div>

@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 <title>Customer Dashboard</title>
 
-<jsp:include page="AdminCSS.jsp"></jsp:include>
+<jsp:include page="CustomerCSS.jsp"></jsp:include>
 </head>
 <body>
 
 	<!-- Header -->
-	<jsp:include page="AdminHeader.jsp"></jsp:include>
+	<jsp:include page="CustomerHeader.jsp"></jsp:include>
 
 	<!-- Sidebar -->
 	<jsp:include page="CustomerSidebar.jsp"></jsp:include>
@@ -26,7 +26,7 @@
 			<div class="col-md-3">
 				<div class="card card-box p-3">
 					<h6>Expenses</h6>
-					<h3>₹12,500</h3>
+					<h3>₹ ${totalExpense}</h3>
 				</div>
 			</div>
 
@@ -40,7 +40,7 @@
 			<div class="col-md-3">
 				<div class="card card-box p-3">
 					<h6>Income</h6>
-					<h3>₹47,500</h3>
+					<h3>₹ ${totalIncome}</h3>
 				</div>
 			</div>
 

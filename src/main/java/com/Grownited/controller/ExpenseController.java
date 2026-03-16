@@ -8,12 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.Grownited.entity.AccountEntity;
 import com.Grownited.entity.CategoryEntity;
 import com.Grownited.entity.ExpenseEntity;
+import com.Grownited.entity.StatusEntity;
 import com.Grownited.entity.SubCategoryEntity;
 import com.Grownited.entity.VendorEntity;
+import com.Grownited.repository.AccountRepository;
 import com.Grownited.repository.CategoryRepository;
 import com.Grownited.repository.ExpenseRepository;
+import com.Grownited.repository.StatusRepository;
 import com.Grownited.repository.SubCategoryRepository;
 import com.Grownited.repository.VendorRepository;
 
@@ -32,6 +36,12 @@ public class ExpenseController {
     
     @Autowired
     VendorRepository vendorRepository;
+    
+    @Autowired
+    AccountRepository accountRepository;
+    
+    @Autowired
+    StatusRepository statusRepository;
 
     // ✅ Open Expense Form
     @GetMapping("expense")
@@ -45,6 +55,13 @@ public class ExpenseController {
 		
         List<VendorEntity> vendorList = vendorRepository.findAll();
 		model.addAttribute("vendorList",vendorList);
+		
+		List<AccountEntity> accountList = accountRepository.findAll();
+		model.addAttribute("accountList",accountList);
+		
+		List<StatusEntity> statusList = statusRepository.findAll();
+		model.addAttribute("statusList",statusList);
+		
         return "Expense";
     }
 

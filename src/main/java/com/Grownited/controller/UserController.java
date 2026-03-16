@@ -20,9 +20,9 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
-	@GetMapping("Users")
-	public String newUser() {
-		return "Users";
+	@GetMapping("/adduser")
+	public String addUser() {
+	    return "UserAdd";
 	}
 	
 	@PostMapping("saveUser")
@@ -30,7 +30,7 @@ public class UserController {
       userEntity.setActive(true);
 		
 		userRepository.save(userEntity);
-		return "AdminDashboard";
+		return "redirect:/ListUsers";
 	}
 	
 	@GetMapping("ListUsers")
