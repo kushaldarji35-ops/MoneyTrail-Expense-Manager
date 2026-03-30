@@ -12,7 +12,6 @@ pageEncoding="UTF-8"%>
 <jsp:include page="CustomerCSS.jsp"></jsp:include>
 
 <style>
-
 body{
     background:#f4f6f9;
 }
@@ -26,7 +25,6 @@ body{
     background:black;
     color:white;
 }
-
 </style>
 
 </head>
@@ -81,21 +79,26 @@ body{
 
 <td>${e.expenseId}</td>
 <td>${e.title}</td>
-<td>${e.categoryId}</td>
-<td>${e.subCategoryId}</td>
-<td>${e.vendorId}</td>
-<td>${e.accountId}</td>
-<td>${e.statusId}</td>
+
+<!-- ✅ FIXED -->
+<td>${e.category.categoryName}</td>
+<td>${e.subCategory.subCategoryName}</td>
+<td>${e.vendor.vendorName}</td>
+<td>${e.account.title}</td>
+<td>${e.status.status}</td>
+
 <td>₹ ${e.amount}</td>
 <td>${e.date}</td>
 
 <td>
 
-
-<a href="deletecustomerexpense?expenseId=${e.expenseId}" class="btn btn-sm btn-warning">
+<!-- ✅ EDIT -->
+<a href="editcustomerexpense?expenseId=${e.expenseId}" 
+class="btn btn-sm btn-warning">
 <i class="bi bi-pencil-square"></i>
 </a>
 
+<!-- ✅ DELETE -->
 <a href="deletecustomerexpense?expenseId=${e.expenseId}" 
 class="btn btn-sm btn-danger"
 onclick="return confirm('Are you sure you want to delete this expense?')">
@@ -117,7 +120,6 @@ onclick="return confirm('Are you sure you want to delete this expense?')">
 </div>
 
 </div>
-
 
 
 <!-- ================= POPUP MODAL ================= -->
@@ -144,108 +146,73 @@ onclick="return confirm('Are you sure you want to delete this expense?')">
 <!-- Title -->
 <div class="mb-3">
 <label class="form-label">Expense Title</label>
-<input type="text" name="title" class="form-control" required>
+<input type="text" name="title" class="form-control" placeholder="Enter expense title" required>
 </div>
-
 
 <!-- Category -->
 <div class="mb-3">
 <label class="form-label">Category</label>
 
 <select name="categoryId" class="form-control" required>
-
 <option value="">Select Category</option>
-
 <c:forEach items="${categoryList}" var="c">
-<option value="${c.categoryId}">
-${c.categoryName}
-</option>
+<option value="${c.categoryId}">${c.categoryName}</option>
 </c:forEach>
-
 </select>
 
 </div>
-
 
 <!-- SubCategory -->
 <div class="mb-3">
-
 <label class="form-label">Sub Category</label>
 
 <select name="subCategoryId" class="form-control" required>
-
 <option value="">Select SubCategory</option>
-
 <c:forEach items="${subCategoryList}" var="sc">
-<option value="${sc.subCategoryId}">
-${sc.subCategoryName}
-</option>
+<option value="${sc.subCategoryId}">${sc.subCategoryName}</option>
 </c:forEach>
-
 </select>
 
 </div>
-
 
 <!-- Vendor -->
 <div class="mb-3">
-
 <label class="form-label">Vendor</label>
 
 <select name="vendorId" class="form-control">
-
 <option value="">Select Vendor</option>
-
 <c:forEach items="${vendorList}" var="v">
-<option value="${v.vendorId}">
-${v.vendorName}
-</option>
+<option value="${v.vendorId}">${v.vendorName}</option>
 </c:forEach>
-
 </select>
 
 </div>
-
 
 <!-- Account -->
 <div class="mb-3">
-
 <label class="form-label">Account</label>
 
 <select name="accountId" class="form-control" required>
-
 <option value="">Select Account</option>
-
 <c:forEach items="${accountList}" var="a">
-<option value="${a.accountId}">
-${a.title}
-</option>
+<option value="${a.accountId}">${a.title}</option>
 </c:forEach>
-
 </select>
 
 </div>
-
 
 <!-- Status -->
 <div class="mb-3">
-
 <label class="form-label">Status</label>
 
 <select name="statusId" class="form-control" required>
-
 <option value="">Select Status</option>
-
 <c:forEach items="${statusList}" var="s">
-<option value="${s.statusId}">
-${s.status}
-</option>
+<option value="${s.statusId}">${s.status}</option>
 </c:forEach>
-
 </select>
 
 </div>
-
 
 <!-- Amount -->
 <div class="mb-3">
@@ -253,13 +220,11 @@ ${s.status}
 <input type="number" step="0.01" name="amount" class="form-control" required>
 </div>
 
-
 <!-- Date -->
 <div class="mb-3">
 <label class="form-label">Date</label>
 <input type="date" name="date" class="form-control" required>
 </div>
-
 
 <!-- Description -->
 <div class="mb-3">
@@ -267,23 +232,18 @@ ${s.status}
 <textarea name="description" class="form-control"></textarea>
 </div>
 
-
 <div class="text-center">
-
-<button type="submit" class="btn btn-danger">
-Save Expense
-</button>
-
+<button type="submit" class="btn btn-danger">Save Expense</button>
 </div>
 
 </form>
 
 </div>
-  <jsp:include page="CustomerFooter.jsp"></jsp:include>
-</div>
+
+<jsp:include page="CustomerFooter.jsp"></jsp:include>
 
 </div>
-
+</div>
 </div>
 
 </body>
