@@ -30,6 +30,7 @@ public class CategoryContoller {
 		categoryRepository.save(categoryEntity);
 		return "redirect:/listCategory";
 	}
+	
 	@GetMapping("listCategory")
 	public String listCategory(Model model) {
 		List<CategoryEntity> categoryList = categoryRepository.findAll();

@@ -16,11 +16,8 @@ public class CustomerController {
 	
 	@GetMapping("customer-dashboard")
 	public String customerDashboard(Model model) {
-		long totalExpense = expenseRepository.count();
-		
-		model.addAttribute("totalExpense",totalExpense);
-		
-		
+		Double totalExpense = expenseRepository.getTotalExpense();
+		model.addAttribute("totalExpense", totalExpense);
 		return "CustomerDashboard";
 	}
 

@@ -70,15 +70,17 @@
                         <c:forEach items="${expenseList}" var="e">
 
                             <tr>
-                                <td>${e.expenseId}</td>
-                                <td>${e.title}</td>
-                                <td>${e.categoryId}</td>
-                                <td>${e.subCategoryId}</td>
-                                <td>${e.vendorId}</td>
-                                <td>${e.accountId}</td>
-                                <td>${e.statusId}</td>
-                                <td>₹ ${e.amount}</td>
-                                <td>${e.date}</td>
+                               <td>${e.expenseId}</td>
+								<td>${e.title}</td>
+								
+								<td>${e.category.categoryName}</td>
+								<td>${e.subCategory.subCategoryName}</td>
+								<td>${e.vendor.vendorName}</td>
+								<td>${e.account.title}</td>
+								<td>${e.status.status}</td>
+								
+								<td>₹ ${e.amount}</td>
+								<td>${e.date}</td>
 
                                 <td>
                     

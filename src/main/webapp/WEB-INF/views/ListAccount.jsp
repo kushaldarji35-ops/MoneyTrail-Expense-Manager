@@ -82,7 +82,7 @@
                                     <!-- Delete -->
                                     <a href="deleteaccount?accountId=${a.accountId}" 
                                        class="btn btn-sm btn-danger"
-                                       onclick="return confirm('Are you sure you want to delete this expense?')">
+                                       onclick="return confirm('Are you sure you want to delete this account?')">
                                        <i class="bi bi-trash"></i>
                                     </a>
                     </td>

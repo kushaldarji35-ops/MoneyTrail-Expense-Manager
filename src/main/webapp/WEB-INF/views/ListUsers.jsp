@@ -52,10 +52,6 @@
 
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3>Users List</h3>
-
-            <a href="adduser" class="btn btn-primary">
-                + Add User
-            </a>
         </div>
 
         <table class="table table-bordered table-hover text-center align-middle">
@@ -124,7 +120,7 @@
                                     <!-- Delete -->
                                     <a href="deleteUser?userId=${u.userId}" 
                                        class="btn btn-sm btn-danger"
-                                       onclick="return confirm('Are you sure you want to delete this expense?')">
+                                       onclick="return confirm('Are you sure you want to delete this user?')">
                                        <i class="bi bi-trash"></i>
                                     </a>
                         </td>

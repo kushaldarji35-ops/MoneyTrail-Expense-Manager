@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,11 +18,26 @@ public class ExpenseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer expenseId;
 	private String title;
-	private Integer categoryId;
-	private Integer SubCategoryId;
-	private Integer vendorId;
-	private Integer accountId;
-	private Integer statusId;
+	
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private CategoryEntity category;
+
+	@ManyToOne
+	@JoinColumn(name = "subcategory_id")
+	private SubCategoryEntity subCategory;
+
+	@ManyToOne
+	@JoinColumn(name = "vendor_id")
+	private VendorEntity vendor;
+
+	@ManyToOne
+	@JoinColumn(name = "account_id")
+	private AccountEntity account;
+
+	@ManyToOne
+	@JoinColumn(name = "status_id")
+	private StatusEntity status;
 	private Float amount;
 	private LocalDate date;
 	private String description;
@@ -37,35 +54,36 @@ public class ExpenseEntity {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public Integer getCategoryId() {
-		return categoryId;
+
+	public CategoryEntity getCategory() {
+		return category;
 	}
-	public void setCategoryId(Integer categoryId) {
-		this.categoryId = categoryId;
+	public void setCategory(CategoryEntity category) {
+		this.category = category;
 	}
-	public Integer getSubCategoryId() {
-		return SubCategoryId;
+	public SubCategoryEntity getSubCategory() {
+		return subCategory;
 	}
-	public void setSubCategoryId(Integer subCategoryId) {
-		SubCategoryId = subCategoryId;
+	public void setSubCategory(SubCategoryEntity subCategory) {
+		this.subCategory = subCategory;
 	}
-	public Integer getVendorId() {
-		return vendorId;
+	public VendorEntity getVendor() {
+		return vendor;
 	}
-	public void setVendorId(Integer vendorId) {
-		this.vendorId = vendorId;
+	public void setVendor(VendorEntity vendor) {
+		this.vendor = vendor;
 	}
-	public Integer getAccountId() {
-		return accountId;
+	public AccountEntity getAccount() {
+		return account;
 	}
-	public void setAccountId(Integer accountId) {
-		this.accountId = accountId;
+	public void setAccount(AccountEntity account) {
+		this.account = account;
 	}
-	public Integer getStatusId() {
-		return statusId;
+	public StatusEntity getStatus() {
+		return status;
 	}
-	public void setStatusId(Integer statusId) {
-		this.statusId = statusId;
+	public void setStatus(StatusEntity status) {
+		this.status = status;
 	}
 	public Float getAmount() {
 		return amount;

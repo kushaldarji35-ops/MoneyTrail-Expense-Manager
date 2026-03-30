@@ -20,11 +20,6 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
-	@GetMapping("/adduser")
-	public String addUser() {
-	    return "UserAdd";
-	}
-	
 	@PostMapping("saveUser")
 	public String saveUser(UserEntity userEntity) {
       userEntity.setActive(true);

@@ -65,19 +65,30 @@ public class ExpenseController {
         return "Expense";
     }
 
-    
-    // ✅ Save Expense
     @PostMapping("saveexpense")
-    public String saveExpense(ExpenseEntity expenseEntity) {
+    public String saveExpense(ExpenseEntity expenseEntity,
+            Integer categoryId,
+            Integer subCategoryId,
+            Integer vendorId,
+            Integer accountId,
+            Integer statusId) {
 
-        expenseEntity.setActive(true); // optional field
+        CategoryEntity category = categoryRepository.findById(categoryId).get();
+        SubCategoryEntity subCategory = subCategoryRepository.findById(subCategoryId).get();
+        VendorEntity vendor = vendorRepository.findById(vendorId).get();
+        AccountEntity account = accountRepository.findById(accountId).get();
+        StatusEntity status = statusRepository.findById(statusId).get();
+
+        expenseEntity.setCategory(category);
+        expenseEntity.setSubCategory(subCategory);
+        expenseEntity.setVendor(vendor);
+        expenseEntity.setAccount(account);
+        expenseEntity.setStatus(status);
 
         expenseRepository.save(expenseEntity);
 
-        // PRG Pattern (VERY IMPORTANT)
         return "redirect:/listexpense";
     }
-    
     @GetMapping("listexpense")
     public String listExpense(Model model) {
         List<ExpenseEntity> expenseList = expenseRepository.findAll();

@@ -27,6 +27,7 @@ public class AuthFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		
+		@SuppressWarnings("unused")
 		String url = req.getRequestURL().toString();
 		String uri = req.getRequestURI().toString(); 
 
@@ -36,6 +37,7 @@ public class AuthFilter implements Filter {
 		publicUrl.add("/signup");
 		publicUrl.add("/forget-password");
 		publicUrl.add("/authenticate");
+		publicUrl.add("/register");
 
 		if (publicUrl.contains(uri) || uri.contains("assets")) {
 			// go ahead
